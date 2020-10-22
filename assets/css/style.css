@@ -1,0 +1,80 @@
+
+/* логотип */
+.logo {
+	height: 35px;
+	display: block;
+	float: left;
+	margin: 10px 10px 10px 10px;
+}
+
+/* ================= about.html =================*/
+
+.text {
+	font-size: 14px;
+	font-family: 'opensans-regular';
+	text-align: justify;
+}
+
+.word1 {
+	font-size: 22px;
+}
+.word2 {
+	color: #f67e6a;
+	font-style: italic 
+}
+.word3 {
+	font-family: Consolas;
+	font-size: 20px;
+}
+
+/* ================= media.html ===================*/
+video {
+	width: 560px;
+	height: 315px;
+}
+
+
+/* ================= contact.html =================== */
+
+
+.form-main {
+  width: 90%;
+  margin: 0 auto;
+  vertical-align: top;
+}
+.form1 {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
+.form2 {
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+/* =================== table.html ==================*/
+
+table {
+	font-size: 14px;
+	font-family: Verdana;
+	border-collapse: collapse;
+	table-layout: fixed;
+	width: 500px;
+}
+
+
+th, td {
+	text-align: center;
+	border: 2px solid yellow;
+}
+
+th {
+	background: gray;
+	color: white;
+}
+
+.rightTD {
+	text-align: right;
+}

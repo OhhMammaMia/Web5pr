@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>3 Column Layout</title>
+	<link rel="stylesheet" href="assets/css/layout.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<header class="header"><img src="assets/img/birdlogo.png" alt="Logo" class="logo"/><p>Bird's header!</p></header>
+<div class="container">
+	<main class="center column">
+		<article>
+			
+			<h1>Contact</h1>
+			
+			<div class="form-main">
+				<div class="form1">
+				
+					<h2>User details</h2>
+					<form>
+						<div>
+							<label>Full name</label>
+							<input type="text" required></input>
+						</div>
+						
+						<div>
+							<label>Your birthday</label>
+							<input type="date" required></input>
+						</div>
+						
+						<div>
+							<label>Gender</label>
+							<select size="1" required>
+								<option selected="selected">-Gender-</option>
+								<option>Male</option>
+								<option>Female</option>
+								<option>Предпочитаю не указывать</option>
+							</select>
+						</div>
+						
+						<div>
+							<label>Country</label>
+							<select size="1" required>
+								<option selected="selected">-Country-</option>
+								<option>Ukraine</option>
+								<option>Not Ukraine</option>
+								<option>Ukraine, But Little Bit Different</option>
+							</select>
+							
+							<label>Phone</label>
+							<input type="tel" name="phone" required>
+						</div>
+						
+						<div>
+						<label style="vertical-align: top">Bio</label>
+						<textarea required></textarea>
+						</div>
+						
+						<div>
+							<button>Submit</button>
+						</div>
+					</form>
+				</div>
+			
+				<div class="form2">
+					<h2>Account details</h2>
+					<form>
+						<div>
+							<label>Username</label>
+							<input type="text" required></input>
+						</div>
+						
+						<div>
+							<label>Email</label>
+							<input type="email" required></input>
+						</div>
+										
+						<div>
+							<label>Password</label>
+							<input type="password" required>
+						</div>
+						
+						<div>
+							<label>Confirm password</label>
+							<input type="password" required>
+						</div>
+						
+						<label>
+							<input type="checkbox" name="terms" required>
+							I accept terms and conditions
+						</label>
+						
+						<div>
+							<button>Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</article>
+	</main>
+	<nav class="left column">
+		<h3>Left heading</h3>
+		<ul>
+			<li><a href="index.html">Main (Index)</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+		<h3>Left heading</h3>
+		<ul>
+			<li><a href="slider.html">Slider</a></li>
+			<li><a href="media.html">Media</a></li>
+			<li><a href="table.html">Table</a></li>
+		</ul>
+	</nav>
+	<div class="right column">
+		<h3>Right heading</h3>
+		<p></p>
+	</div>
+</div>
+<div class="footer-wrapper">
+	<footer class="footer"><img src="assets/img/birdlogo.png" alt="Logo" class="logo"/><p>Bird's footer!</p></footer>
+</div>
+</body>
+</html>
