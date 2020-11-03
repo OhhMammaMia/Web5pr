@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>3 Column Layout</title>
+	<link rel="stylesheet" href="assets/css/layout.css">
+	<link rel="stylesheet" href="assets/css/style.css">
+	
+	
+	
+	<link rel="stylesheet" href="assets/css/paint.css">
+	
+	
+	
+</head>
+<body>
+<header class="header"><img src="assets/img/birdlogo.png" alt="Logo" class="logo"/><p>Bird's header!</p></header>
+<div class="container">
+	<main class="center column">
+		<article>
+			
+			<h1>Paint</h1>
+			
+			
+			Оранжевый <input type="radio" name="colorSelect" onclick="setColor('#df4b26')" checked>
+            Синий <input type="radio" name="colorSelect" onclick="setColor('#004DFF')">
+			Красный <input type="radio" name="colorSelect" onclick="setColor('#ff0000')"><br><br>
+			
+			
+			Ширина <input type="range" min="1" max="10" step="1" value="5" id="brushSizeSelector"><br><br>
+			
+			<canvas id="draw" width="490" height="220"></canvas>
+			<br>
+			<button onclick="clearArea()">Clear</button>
+
+		</article>
+	</main>
+	<nav class="left column">
+		<h3>Left heading</h3>
+		<ul>
+			<li><a href="#">Main (Index)</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="about.html">About</a></li>
+		</ul>
+		<h3>Left heading</h3>
+		<ul>
+			<li><a href="slider.html">Slider</a></li>
+			<li><a href="media.html">Media</a></li>
+			<li><a href="table.html">Table</a></li>
+		</ul>
+	</nav>
+	<div class="right column">
+		<h3>Right heading</h3>
+		<p></p>
+	</div>
+</div>
+<div class="footer-wrapper">
+	<footer class="footer"><img src="assets/img/birdlogo.png" alt="Logo" class="logo"/><p>Bird's footer!</p></footer>
+</div>
+
+
+<script src="assets/js/paint.js"></script>
+
+
+
+</body>
+</html>
