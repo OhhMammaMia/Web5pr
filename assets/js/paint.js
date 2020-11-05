@@ -5,6 +5,12 @@ context = canvas.getContext("2d");
 let clickX = new Array();
 let clickY = new Array();
 let clickDrag = new Array();
+
+
+let colorArray = new Array(); // ========= массив с цветами ==========
+let thicknessArray = new Array(); // ========== массив с толщиной кисти ========
+
+
 let paint;
 let mouseX;
 let mouseY;
@@ -16,16 +22,16 @@ let offsetTop  = canvas.parentElement.parentElement.offsetTop;
 
 
 
-// =================== переменная цвета кисти ===================
+// =================== переменная текущего цвета кисти ===================
 let paintColor = new String("#df4b26");
-// =================== переменная толщины кисти ===================
+// =================== переменная текущей толщины кисти ===================
 let paintThickness = 5;
 
 // =================== ползунок ширины кисти ===================
 let rangePaintSize = document.getElementById('brushSizeSelector');
 
 
-canvas.addEventListener('mousedown',function (e){
+canvas.addEventListener('mousedown', function (e){
    /*mouseX = e.pageX - this.offsetLeft;
    mouseY = e.pageY - this.offsetTop;*/
    
@@ -34,7 +40,7 @@ canvas.addEventListener('mousedown',function (e){
    mouseY = e.pageY - this.offsetTop - offsetTop;
    
    paint = true;
-   addClick(mouseX, mouseY);
+   addClick(mouseX, mouseY, paintColor, paintThickness);
    redraw();
 });
 canvas.addEventListener('mousemove', function (e){
@@ -42,7 +48,7 @@ canvas.addEventListener('mousemove', function (e){
        //addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
 
 /* версія для нашої розмітки*/
-       addClick(e.pageX - this.offsetLeft - offsetLeft, e.pageY - this.offsetTop - offsetTop, true);
+       addClick(e.pageX - this.offsetLeft - offsetLeft, e.pageY - this.offsetTop - offsetTop, paintColor, paintThickness, true);
 
        redraw();
 	   
@@ -57,21 +63,25 @@ canvas.addEventListener('mouseleave',function (e){
 
 //Малювання:
 
-function addClick(x, y, dragging)
+function addClick(x, y, color, thickness, dragging)
 {
    clickX.push(x);
    clickY.push(y);
+   
+   colorArray.push(color);
+   thicknessArray.push(thickness);
+   
    clickDrag.push(dragging);
 }
 
 function redraw(){
    context.clearRect(0, 0, context.canvas.width, context.canvas.height); // Clears the canvas
 
-   context.strokeStyle = paintColor; // устанавливаю цвет рисования
    context.lineJoin = "round";
-   context.lineWidth = paintThickness;
 
    for (var i=0; i < clickX.length; i++) {
+		context.strokeStyle = colorArray[i]; // ========= устанавливаю цвет рисования ==========
+		context.lineWidth = thicknessArray[i]; // ======== устанавливаю ширину кисти =========
        context.beginPath();
        if(clickDrag[i] && i){
            context.moveTo(clickX[i-1], clickY[i-1]);
@@ -90,22 +100,25 @@ function clearArea() {
 	clickX.splice(0, clickX.length);
 	clickY.splice(0, clickY.length);
 	clickDrag.splice(0, clickDrag.length);
+	
+	colorArray.splice(0, colorArray.length);
+	thicknessArray.splice(0, thicknessArray.length);
 }
 
 // =================== изменение цвета линии ===================
 function setColor(color) {
 	paintColor = color;
-	redraw();
+	//redraw();
 }
 
 
 // =================== настройка ширины кисти ===================
 rangePaintSize.addEventListener('change', function () {
 	paintThickness = this.value;
-	redraw();
+	//redraw();
 }, false);
 
 rangePaintSize.addEventListener('input', function () {
     paintThickness = this.value;
-	redraw();
+	//redraw();
 }, false);
